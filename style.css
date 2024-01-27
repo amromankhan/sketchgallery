@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400|PT+Sans:400,700");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+body {
+  background: #f1f2f3;
+  border: 2px solid black;
+}
+
+.header h1,
+h3,
+h6 {
+  display: grid;
+  margin: 15px;
+  text-align: center;
+  font-family: "Lato";
+}
+.header{
+  border:5px solid black;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  gap: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img.four-grid-cells {
+  grid-row: span 2 / auto;
+  grid-column: span 2 / auto;
+}
+
+img.wide-image {
+  grid-column: span 2 / auto;
+}
+.footer {
+  display: block;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 2 px solid black;
+  background-color: #282829;
+  box-shadow: 2px 2px 6px whitesmoke inset;
+}
+.footer h4 {
+  color: #a5a0a0 !important;
+}
+.footer h4,
+a {
+  text-decoration: none;
+  transition: all ease 0.5s;
+  color: #858080;
+  text-shadow: 1px 1.5px 1px #4a4388;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.footer{
+  border: 2px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* changes the grid layout to a single column */
+  div.gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* resets the grid placement properties for 
+    the images spanning four grid cells */
+  img.four-grid-cells {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  /* resets the grid placement properties for 
+    the images spanning two grid columns  */
+  img.wide-image {
+    grid-column: auto;
+  }
+}
